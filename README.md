@@ -1,5 +1,5 @@
 # Defli MongoDB Connector Install Script
-This shell script installs the Defli MongoDB Connector on a Defli Ground Station by automating the official installation instructions. This script is compatible with Ubuntu 22.04.
+This shell script installs the Defli MongoDB Connector on a Defli Ground Station by automating the official installation instructions. This script is compatible with Ubuntu 22.04 64-bit.
 
 ### Usage
 
