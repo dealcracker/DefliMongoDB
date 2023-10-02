@@ -7,7 +7,11 @@ This shell script installs the Defli MongoDB Connector on a Defli Ground Station
 
 	wget https://raw.githubusercontent.com/dealcracker/DefliMongoDB/master/installMongo.sh
 
-2. Run Script: 
+2. Make file executable	
+
+	chmod +x installMongo.sh	
+
+3. Run Script: 
 
 	sudo ./installMongo.sh
 
