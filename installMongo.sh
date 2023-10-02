@@ -51,13 +51,11 @@ cp /usr/lib/python3.10/asyncio/coroutines.py  /usr/lib/python3.11/asyncio/corout
 # Istall pip modules
 pip3 install aiohttp motor pymongo python-dateutil dnspython
 
-
 echo "Preparing the connector config.py file..."
 # copy the default config.py template
 cd adsb-data-collector-mongodb
 rm -f config.py 
 cp config_template.py config.py
-
 
 # replace text in config.py
 original_line1="username:password@url.mongodb.net/myFirstDatabase"
@@ -72,7 +70,6 @@ new_line3="http://"$ip_address"/tar1090/data/aircraft.json"
 sed -i "s|$original_line1|$new_line1|g" "config.py"
 sed -i "s|$original_line2|$new_line2|g" "config.py"
 sed -i "s|$original_line3|$new_line3|g" "config.py"
-
 
 echo "Preparing the adsb_collector service..."
 #get the working directory
@@ -141,4 +138,3 @@ case "$status" in
     echo "You can enter 'sudo systemctl status adsb_collector' to check the status."
     ;;
 esac
-
