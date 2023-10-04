@@ -44,6 +44,11 @@ bash -c "$(wget -O - https://github.com/wiedehopf/adsb-scripts/raw/master/readsb
 
 readsb-set-location $latitude $longitude
 
+#install graphs1090
+echo""
+echo"Installing Graphs1090..."
+bash -c "$(curl -L -o - https://github.com/wiedehopf/graphs1090/raw/master/install.sh)" 
+
 #Determine IP address to use in config.py
 #test if localhost is reachable
 echo "Determining local IP address..."
