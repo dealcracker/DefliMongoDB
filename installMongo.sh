@@ -2,7 +2,7 @@
 # install the Defli MongoDB connector
 # Copyright (c) 2023 dealcracker
 #
-# last modfied: 2020-Oct-3
+# last modified: 2020-Oct-03
 
 
 #enforce sudo
