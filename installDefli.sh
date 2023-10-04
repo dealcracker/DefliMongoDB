@@ -12,7 +12,11 @@ if ! [[ $EUID = 0 ]]; then
 fi
 
 #change to user's home dir
-cd ~/
+user_dir=$(getent passwd ${SUDO_USER:-$USER} | cut -d: -f6)
+cd $user_dir
+
+#get the user name
+user_name=sudo who am i | awk '{print $1}'
 
 #prompt for coordinate
 echo "==================== Defli ====================="
@@ -128,6 +132,7 @@ echo ""
 echo "Preparing the adsb_collector service..."
 #get the working directory
 current_dir=$(pwd)
+chown -R $user_name:$user_name $current_dir
 
 #compose the exec start line
 exec_start_line="ExecStart=/usr/bin/python3 $current_dir/adsb-data-collector.py"
