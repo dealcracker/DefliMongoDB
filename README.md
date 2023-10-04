@@ -1,19 +1,29 @@
 # Defli MongoDB Connector Install Script
-This shell script installs the Defli MongoDB Connector on a Defli Ground Station by automating the official installation instructions. This script is compatible with Ubuntu 22.04 64-bit.
+This shell script installs the Defli MongoDB Connector on a Defli Ground Station by automating the official installation instructions. This script is compatible with Ubuntu 22.04 and 23.04 64-bit.
+
+
+## MongoDB Connector Install Script
+Use this script to install the new MongoDB script on to an existing Defli Ground station.
 
 ### Usage
+*curl -sL https://raw.githubusercontent.com/dealcracker/DefliMongoDB/master/installMongo.sh | sudo bash*
 
-1. Copy the installMongo.sh script to your user directory:
+	
+## Full Defli Ground Station Install Script
+Use this script to install the full Defli ground station including the MongoDB connector on to a new device. Note that this script will reboot your device at the end of the installation. Also, you may need to manually reboot your device a second time.
 
-	wget https://raw.githubusercontent.com/dealcracker/DefliMongoDB/master/installMongo.sh
+After installation and reboot, use the following command to confirm that the MongoDB connector service is running. *sudo systemctl status adsb_collector*
 
-2. Make file executable	
-
-	chmod +x installMongo.sh	
-
-3. Run Script: 
-
-	sudo ./installMongo.sh
+### Usage
+*curl -sL https://raw.githubusercontent.com/dealcracker/DefliMongoDB/master/installDefli.sh | sudo bash*
 
 
-Note that this script will attempt to use "localhost" in the tar1090 URL if it properly resolves on the host. If localhost does not resolve, the script will then check for a wired ethernet interface IP address. If that interface is down, the script will then attempt to use the IP address of the wireless wifi interface. 
+
+
+## SOCAT Removal Script
+Use this script to remove the old obsolete SOCAT connector from your ground station device.
+
+### Usage
+*curl -sL https://raw.githubusercontent.com/dealcracker/DefliMongoDB/master/removeSOCAT.sh | sudo bash*
+
+ 
