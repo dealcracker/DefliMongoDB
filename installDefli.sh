@@ -26,13 +26,12 @@ echo ""
 echo "Enter the geogrphical coordinates of your Defli ground station (decimal)"
 
 read -p "Latitude:  " latitude
-read -p "Longitude: " longitude
-
 if (( $(echo "$latitude < -90.0" | bc -l) )) && (( $(echo "$latitude > 90.0" | bc -l) )); then 
   echo "The latitude value you entered is invalid. Aborting installation."
   exit 1
 fi
 
+read -p "Longitude: " longitude
 if (( $(echo "$Longitude < -180.0" | bc -l) )) && (( $(echo "$Longitude > 180.0" | bc -l) )); then 
   echo "The Longitude value you entered is invalid. Aborting installation."
   exit 1
