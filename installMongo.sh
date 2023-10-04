@@ -96,7 +96,6 @@ sed -i "s|$original_line1|$new_line1|g" "config.py"
 sed -i "s|$original_line2|$new_line2|g" "config.py"
 sed -i "s|$original_line3|$new_line3|g" "config.py"
 
-echo ""
 echo "Preparing the adsb_collector service..."
 #get the working directory
 current_dir=$(pwd)
@@ -106,11 +105,14 @@ exec_start_line="ExecStart=/usr/bin/python3 $current_dir/adsb-data-collector.py"
 
 #remove any existing adsb_collector.service file
 if [ -e "/lib/systemd/system/adsb_collector.service" ]; then
+	echo "Disable and removing exiting service file..."
+  systemctl stop adsb_collector
+  systemctl disable adsb_collector 
 	rm -f /lib/systemd/system/adsb_collector.service
-	echo "Removing exiting service file..."
 fi
 
 # Create the service file and add the first line of text
+echo "Create new service file..."
 touch /lib/systemd/system/adsb_collector.service
 
 # Check if the file exists
@@ -135,7 +137,6 @@ echo "WantedBy=multi-user.target" >> /lib/systemd/system/adsb_collector.service
 systemctl enable adsb_collector 
 systemctl start adsb_collector
 
-echo ""
 echo "Waiting for service to start..."
 sleep 3
 
