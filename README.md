@@ -19,7 +19,7 @@ sudo systemctl status adsb_collector
 ```
 ### Usage
 ```
-curl -sL https://raw.githubusercontent.com/dealcracker/DefliMongoDB/master/installDefli.sh | sudo bash
+sudo bash -c "$(wget -O - https://raw.githubusercontent.com/dealcracker/DefliMongoDB/master/installDefli.sh)"
 ```
 
 
