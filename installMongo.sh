@@ -150,6 +150,7 @@ systemctl enable adsb_collector
 systemctl start adsb_collector
 
 echo "Waiting for service to start..."
+public_ip = $(curl ipv4.icanhazip.com)
 sleep 3
 
 #get the service status
@@ -164,7 +165,9 @@ case "$status" in
     echo "Installation Completed Successfully!" 
     echo "$service_name is running properly."
     echo 
-    echo "Note: enter 'sudo systemctl status adsb_collector' anytime to check the status."
+    echo "Your public IP addess is: $public_ip.  Be sure to enter this address in Defli-Wallet."
+    echo "You can enter 'sudo systemctl status adsb_collector' anytime to check the connector status."
+
     ;;
   "inactive")
     echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
