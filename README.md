@@ -10,17 +10,14 @@ Use this script to install the new MongoDB connector on your existing Defli Grou
 curl -sL https://raw.githubusercontent.com/dealcracker/DefliMongoDB/master/installMongo.sh | sudo bash
 ```
 	
-## Full Defli Ground Station Install Script
-Use this script to install the full Defli ground station including the MongoDB connector on a new ground station device. Note that this script will reboot your device at the end of the installation. Also, you may need to manually reboot your device a second time before the connector will run successfully.
+## Defli Ground Station Install Script
+Use this script to install the Defli ground station on a new ground station device. Note that this script will reboot your device at the end of the installation. 
 
-After installation and reboot, use the following command to confirm that the MongoDB connector service is running. 
-```
-sudo systemctl status adsb_collector
-```
 ### Usage
 ```
 sudo bash -c "$(wget -O - https://raw.githubusercontent.com/dealcracker/DefliMongoDB/master/installDefli.sh)"
 ```
+After successful installation, please run the MongoDB Connector install script.
 
 
 
