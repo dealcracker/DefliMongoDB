@@ -7,7 +7,7 @@ Use this script to install the new MongoDB connector on your existing Defli Grou
 
 ### Usage
 ```
-curl -sL https://raw.githubusercontent.com/dealcracker/DefliMongoDB/master/installMongo.sh | sudo bash
+sudo bash -c "$(wget -O - https://raw.githubusercontent.com/dealcracker/DefliMongoDB/master/installMongo.sh)"
 ```
 	
 ## Defli Ground Station Install Script
@@ -26,6 +26,6 @@ Use this script to remove the old obsolete SOCAT connector from your ground stat
 
 ### Usage
 ```
-curl -sL https://raw.githubusercontent.com/dealcracker/DefliMongoDB/master/removeSOCAT.sh | sudo bash
+sudo bash -c "$(wget -O - https://raw.githubusercontent.com/dealcracker/DefliMongoDB/master/removeSOCAT.sh)"
 ```
  
