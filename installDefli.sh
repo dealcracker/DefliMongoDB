@@ -102,11 +102,10 @@ if [ -e "/snap/core22/867/usr/lib/python3.10/asyncio/coroutines.py" ]; then
   cp /snap/core22/867/usr/lib/python3.10/asyncio/coroutines.py /usr/lib/python3.11/asyncio/coroutines.py > /dev/null 2>&1
 fi
 
-#BM - Changed to this code section to fix ubuntu
-apt install python3-aiohttp -y 
-apt install python3-motor -y
-apt install python3-dateutil -y
-apt install python3-dnspython -y
+# Istall pip modules
+echo ""
+echo "Installing Pip Modules..."
+pip3 install aiohttp motor pymongo python-dateutil dnspython
 
 echo ""
 echo "Preparing the connector config.py file..."
