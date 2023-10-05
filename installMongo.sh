@@ -150,9 +150,9 @@ systemctl enable adsb_collector
 systemctl start adsb_collector
 
 echo "Waiting for service to start..."
-public_ip = $(curl -s ipv4.icanhazip.com)
-
 sleep 3
+
+public_ip=$(curl -s https://ipinfo.io/ip)
 
 #get the service status
 service_name="adsb_collector"
