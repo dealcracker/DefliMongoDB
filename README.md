@@ -28,4 +28,8 @@ Use this script to remove the old obsolete SOCAT connector from your ground stat
 ```
 sudo bash -c "$(wget -O - https://raw.githubusercontent.com/dealcracker/DefliMongoDB/master/removeSOCAT.sh)"
 ```
- 
+## Troubleshooting
+
+If during the installation you see a purple screen that asks "Which services should be restarted?", please hit enter to continue.
+
+![alt text](https://github.com/dealcracker/DefliMongoDB/blob/master/purpleScreen.png?raw=true)
