@@ -2,7 +2,7 @@
 # install the Defli MongoDB connector
 # Copyright (c) 2023 dealcracker
 #
-# last modified: 2020-Oct-03
+# last modified: 2020-Oct-05
 
 
 #enforce sudo
@@ -74,10 +74,22 @@ if [ -e "/snap/core22/867/usr/lib/python3.10/asyncio/coroutines.py" ]; then
   cp /snap/core22/867/usr/lib/python3.10/asyncio/coroutines.py /usr/lib/python3.11/asyncio/coroutines.py > /dev/null 2>&1
 fi
 
+
 # Istall pip modules
 echo ""
 echo "Installing Pip Modules..."
-pip3 install aiohttp motor pymongo python-dateutil dnspython
+# pip3 install aiohttp motor pymongo python-dateutil dnspython
+apt install python3-aiohttp -y # BM - Changed to this code section to fix ubuntu
+read -p "Press Enter to resume ..."
+apt install python3-motor -y
+read -p "Press Enter to resume ..."
+# apt install python3-pymongo -y not needed as installed as dependency in motor install
+# read -p "Press Enter to resume ..."
+apt install python3-dateutil -y
+read -p "Press Enter to resume ..."
+apt install python3-dnspython -y
+read -p "Press Enter to resume ..."
+
 
 echo ""
 echo "Preparing the connector config.py file..."
