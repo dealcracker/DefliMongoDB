@@ -42,10 +42,6 @@ echo "Updating package list..."
 # Update the package list
 apt update -y
 
-echo ""
-echo "Applying upgrades ..."
-apt upgrade -y
-
 echo""
 echo"Installing A-DSB Resder..."
 bash -c "$(wget -O - https://github.com/wiedehopf/adsb-scripts/raw/master/readsb-install.sh)"
