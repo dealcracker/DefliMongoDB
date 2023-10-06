@@ -1,8 +1,7 @@
-#### *A huge thanks goes out to @BigMaxi! His countless hours to improve and test these scripts have been invaluable!*
+#### *A huge thank you goes out to @BigMaxi! His countless hours to improve and test these scripts have been invaluable!*
 
 # Defli MongoDB Connector Install Script
-This shell script installs the Defli MongoDB Connector on a Defli Ground Station by automating the official installation instructions. This script is compatible with Ubuntu 22.04 and 23.04 64-bit.
-
+These shell scripts help to install the Defli ground station. One script installs the base Defli ground station on a new device. Another script installs the new Defli MongoDB Connector on new or existing ground stations. A third script removes the old SOCAT connector from a ground station. These scripts are compatible with the 64-bit version of Ubuntu 20.04, 22.04, and 23.04 as well as Rasberry Pi OS. The current recommended OS from Defli Networks is Ubuntu 22.04. 
 
 ## MongoDB Connector Install Script
 Use this script to install the new MongoDB connector on your existing Defli Ground station.
@@ -20,7 +19,6 @@ Use this script to install the Defli ground station on a new ground station devi
 sudo bash -c "$(wget -O - https://raw.githubusercontent.com/dealcracker/DefliMongoDB/master/installDefli.sh)"
 ```
 After successful installation, please run the MongoDB Connector install script.
-
 
 
 ## SOCAT Removal Script
