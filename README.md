@@ -21,6 +21,13 @@ After successful installation, please run the MongoDB Connector install script.
 sudo bash -c "$(wget -O - https://raw.githubusercontent.com/dealcracker/DefliMongoDB/master/installDefli.sh)"
 ```
 
+## Defli MongoDB Connector Service Update Script
+Use this script if you have previously installed he MongoDB connector using the manual instructions. This script will update the service configuration for better reliability. 
+
+### Usage
+```
+sudo bash -c "$(wget -O - https://raw.githubusercontent.com/dealcracker/DefliMongoDB/master/updateService.sh)"
+```
 
 
 ## SOCAT Removal Script
