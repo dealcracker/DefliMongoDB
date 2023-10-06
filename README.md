@@ -51,7 +51,7 @@ sudo reboot
 ```
 Then check the service status again
 ```
-sudo systemctl start adsb_collector
+sudo systemctl status adsb_collector
 ```
 
 ### Update your OS
