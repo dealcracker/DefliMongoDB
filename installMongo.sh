@@ -138,10 +138,14 @@ fi
 echo "[Unit]" >> /lib/systemd/system/adsb_collector.service
 echo "Description=adsb_collector" >> /lib/systemd/system/adsb_collector.service
 echo "After=multi-user.target" >> /lib/systemd/system/adsb_collector.service
+echo "Requires=readsb.service" >> /lib/systemd/system/adsb_collector.service
 echo "[Service]" >> /lib/systemd/system/adsb_collector.service
 echo "Type=simple" >> /lib/systemd/system/adsb_collector.service
 echo "$exec_start_line" >> /lib/systemd/system/adsb_collector.service
-echo "Restart=on-abort" >> /lib/systemd/system/adsb_collector.service
+echo "Restart=always" >> /lib/systemd/system/adsb_collector.service
+echo "RestartSec=30" >> /lib/systemd/system/adsb_collector.service
+echo "StartLimitInterval=1" >> /lib/systemd/system/adsb_collector.service
+echo "StartLimitBurst=100" >> /lib/systemd/system/adsb_collector.service
 echo "[Install]" >> /lib/systemd/system/adsb_collector.service
 echo "WantedBy=multi-user.target" >> /lib/systemd/system/adsb_collector.service
 
