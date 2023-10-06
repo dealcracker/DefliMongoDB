@@ -47,7 +47,7 @@ echo
 echo "Updateing the adsb_collector service..."
 
 # Create the service file and add the first line of text
-touch /lib/systemd/system/adsb_collector.service
+touch $service_file_path
 
 # Check if the file exists
 if [ ! -e "$service_file_path" ]; then
@@ -57,19 +57,19 @@ if [ ! -e "$service_file_path" ]; then
 fi
 
 # Add needed lines ot service file
-echo "[Unit]" >> /lib/systemd/system/adsb_collector.service
-echo "Description=adsb_collector" >> /lib/systemd/system/adsb_collector.service
-echo "After=multi-user.target" >> /lib/systemd/system/adsb_collector.service
-echo "Requires=readsb.service" >> /lib/systemd/system/adsb_collector.service
-echo "[Service]" >> /lib/systemd/system/adsb_collector.service
-echo "Type=simple" >> /lib/systemd/system/adsb_collector.service
-echo "$exec_start_line" >> /lib/systemd/system/adsb_collector.service
-echo "Restart=always" >> /lib/systemd/system/adsb_collector.service
-echo "RestartSec=30" >> /lib/systemd/system/adsb_collector.service
-echo "StartLimitInterval=1" >> /lib/systemd/system/adsb_collector.service
-echo "StartLimitBurst=100" >> /lib/systemd/system/adsb_collector.service
-echo "[Install]" >> /lib/systemd/system/adsb_collector.service
-echo "WantedBy=multi-user.target" >> /lib/systemd/system/adsb_collector.service
+echo "[Unit]" >> $service_file_path
+echo "Description=adsb_collector" >> $service_file_path
+echo "After=multi-user.target" >> $service_file_path
+echo "Requires=readsb.service" >> $service_file_path
+echo "[Service]" >> $service_file_path
+echo "Type=simple" >> $service_file_path
+echo "$exec_start_line" >> $service_file_path
+echo "Restart=always" >> $service_file_path
+echo "RestartSec=30" >> $service_file_path
+echo "StartLimitInterval=1" >> $service_file_path
+echo "StartLimitBurst=100" >> $service_file_path
+echo "[Install]" >> $service_file_path
+echo "WantedBy=multi-user.target" >> $service_file_path
 
 #enable and start the adsb colletor service
 systemctl enable adsb_collector 

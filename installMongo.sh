@@ -115,8 +115,10 @@ chown -R $user_name:$user_name $current_dir
 #compose the exec start line
 exec_start_line="ExecStart=/usr/bin/python3 $current_dir/adsb-data-collector.py"
 
+service_file_path="/lib/systemd/system/adsb_collector.service"
+
 #remove any existing adsb_collector.service file
-if [ -e "/lib/systemd/system/adsb_collector.service" ]; then
+if [ -e "$service_file_path" ]; then
 	echo "Disable and removing exiting service file..."
   systemctl stop adsb_collector
   systemctl disable adsb_collector 
@@ -125,29 +127,29 @@ fi
 
 # Create the service file and add the first line of text
 echo "Create new service file..."
-touch /lib/systemd/system/adsb_collector.service
+touch touch $service_file_path
 
 # Check if the file exists
-if [ ! -e "/lib/systemd/system/adsb_collector.service" ]; then
+if [ ! -e "$service_file_path" ]; then
   echo "Error: Could not create service file."
   echo "Aborting installation"
   exit 1
 fi
 
 # Add needed lines ot service file
-echo "[Unit]" >> /lib/systemd/system/adsb_collector.service
-echo "Description=adsb_collector" >> /lib/systemd/system/adsb_collector.service
-echo "After=multi-user.target" >> /lib/systemd/system/adsb_collector.service
-echo "Requires=readsb.service" >> /lib/systemd/system/adsb_collector.service
-echo "[Service]" >> /lib/systemd/system/adsb_collector.service
-echo "Type=simple" >> /lib/systemd/system/adsb_collector.service
-echo "$exec_start_line" >> /lib/systemd/system/adsb_collector.service
-echo "Restart=always" >> /lib/systemd/system/adsb_collector.service
-echo "RestartSec=30" >> /lib/systemd/system/adsb_collector.service
-echo "StartLimitInterval=1" >> /lib/systemd/system/adsb_collector.service
-echo "StartLimitBurst=100" >> /lib/systemd/system/adsb_collector.service
-echo "[Install]" >> /lib/systemd/system/adsb_collector.service
-echo "WantedBy=multi-user.target" >> /lib/systemd/system/adsb_collector.service
+echo "[Unit]" >> $service_file_path
+echo "Description=adsb_collector" >> $service_file_path
+echo "After=multi-user.target" >> $service_file_path
+echo "Requires=readsb.service" >> $service_file_path
+echo "[Service]" >> $service_file_path
+echo "Type=simple" >> $service_file_path
+echo "$exec_start_line" >> $service_file_path
+echo "Restart=always" >> $service_file_path
+echo "RestartSec=30" >> $service_file_path
+echo "StartLimitInterval=1" >> $service_file_path
+echo "StartLimitBurst=100" >> $service_file_path
+echo "[Install]" >> $service_file_path
+echo "WantedBy=multi-user.target" >> $service_file_path
 
 #enable and start the adsb colletor service
 systemctl enable adsb_collector 
