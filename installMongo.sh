@@ -166,7 +166,7 @@ case "$status" in
     echo "Installation Completed Successfully!" 
     echo "$service_name is running properly."
     echo 
-    echo "Your public IP addess is: $public_ip.  Be sure to enter this address in Defli-Wallet."
+    echo "Your public IP addess is: $public_ip  Be sure to enter this address in Defli-Wallet."
     echo "You can enter 'sudo systemctl status adsb_collector' anytime to check the connector status."
 
     ;;
