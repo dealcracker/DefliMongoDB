@@ -14,7 +14,7 @@ sudo bash -c "$(wget -O - https://raw.githubusercontent.com/dealcracker/DefliMon
 ## Defli Ground Station Installation Script
 Use this script to install the base Defli ground station on a new device. This script also installs the graphs package. You will be prompted to enter the latitude and longitude of your ground station. Note that this script will reboot your device at the end of the installation. 
 
-After successful installation, please run the MongoDB Connector install script.
+After rebooting (at the end of the installation), please run 'sudo autogain1090' and then run the MongoDB Connector install script.
 
 ### Usage
 ```
