@@ -63,10 +63,10 @@ echo"Installing Graphs1090..."
 bash -c "$(curl -L -o - https://github.com/wiedehopf/graphs1090/raw/master/install.sh)" 
 
 echo
-echo "Installation Finished - Reboot Require!"
+echo "Installation Finished - Reboot Required!"
 echo "After rebooting, please run AutoGain: 'sudo autogain1090'"
-echo "then run the MondgoDB Installation script."
+echo "then run the MondgoDB Connector Installation script."
 echo
-read -p "Press Enter To Reboot Now"
+read -p "Press Enter To Reboot Now..."
 
 
