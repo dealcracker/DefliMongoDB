@@ -52,22 +52,21 @@ bash -c "$(wget -O - https://github.com/wiedehopf/adsb-scripts/raw/master/readsb
 
 readsb-set-location $latitude $longitude
 
+#install AutoGain
+echo""
+echo"Installing AutoGain..."
+bash -c "$(curl -L -o - https://github.com/wiedehopf/adsb-scripts/raw/master/autogain-install.sh)" hash -r
+
 #install graphs1090
 echo""
 echo"Installing Graphs1090..."
 bash -c "$(curl -L -o - https://github.com/wiedehopf/graphs1090/raw/master/install.sh)" 
 
+echo
 echo "Installation Finished - Reboot Require!"
-echo "Rebooting in 5 seconds! Press Ctrl-C to abort"
-echo "5"
-sleep 1
-echo "4"
-sleep 1
-echo "3"
-sleep 1
-echo "2"
-sleep 1
-echo "1"
-sleep 1
-reboot
+echo "After rebooting, please run AutoGain: 'sudo autogain1090'"
+echo "then run the MondgoDB Installation script."
+echo
+read -p "Press Enter To Reboot Now"
+
 
