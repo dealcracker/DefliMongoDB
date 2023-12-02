@@ -68,3 +68,6 @@ echo "After rebooting, please run AutoGain: 'sudo autogain1090'"
 echo "then run the MondgoDB Connector Installation script."
 echo
 read -p "Press Enter To Reboot Now..."
+
+#reboot
+reboot
