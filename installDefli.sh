@@ -22,7 +22,7 @@ user_name=sudo who am i | awk '{print $1}'
 echo "==================== Defli ====================="
 echo "Installing Defli with no connector." 
 echo "Please be sure your RTL-SDR dongle is connected."
-echo ""
+echo
 echo "Enter the geogrphical coordinates of your Defli ground station (decimal)"
 
 read -p "Latitude:  " latitude
@@ -41,25 +41,25 @@ if (( $(echo "$Longitude < -180.0" | bc -l) )) && (( $(echo "$Longitude > 180.0"
   exit 1
 fi
 
-echo ""
+echo
 echo "Updating package list..."
 # Update the package list
 apt update -y
 
-echo""
-echo"Installing A-DSB Resder..."
+echo
+echo "Installing A-DSB Resder..."
 bash -c "$(wget -O - https://github.com/wiedehopf/adsb-scripts/raw/master/readsb-install.sh)"
 
 readsb-set-location $latitude $longitude
 
 #install AutoGain
-echo""
-echo"Installing AutoGain..."
+echo
+echo "Installing AutoGain..."
 bash -c "$(curl -L -o - https://github.com/wiedehopf/adsb-scripts/raw/master/autogain-install.sh)" hash -r
 
 #install graphs1090
-echo""
-echo"Installing Graphs1090..."
+echo
+echo "Installing Graphs1090..."
 bash -c "$(curl -L -o - https://github.com/wiedehopf/graphs1090/raw/master/install.sh)" 
 
 echo
@@ -68,5 +68,3 @@ echo "After rebooting, please run AutoGain: 'sudo autogain1090'"
 echo "then run the MondgoDB Connector Installation script."
 echo
 read -p "Press Enter To Reboot Now..."
-
-
